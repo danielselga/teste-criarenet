@@ -1,24 +1,19 @@
 # criarenet-test
 
-## Project setup
+## Setup do projeto
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compilar e fazer hot-roloads para desenvolvimento
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Build para produção
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
+### Customizar configuração
 See [Configuration Reference](https://cli.vuejs.org/config/).
