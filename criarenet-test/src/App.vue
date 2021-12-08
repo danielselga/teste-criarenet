@@ -5,8 +5,11 @@
 </template>
 
 <script>
+import store from '@/store/index.js'
 export default {
-
+    created: () => {
+    store.dispatch("setData");
+  }
 }
 </script>
 
