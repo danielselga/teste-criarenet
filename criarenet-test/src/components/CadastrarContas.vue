@@ -58,12 +58,13 @@
 </template>
 
 <script>
-import store from '@/store/index.js'
+import store from '../store/index'
 
 export default {
   data() {
     return {
       form: {
+        id: '',
         nome: '',
         email: '',
         cpf: '',
@@ -73,8 +74,7 @@ export default {
   },
   methods: {
     getUser() {
-      console.log(this.form)
-      // Object.keys(form).values =
+      this.id = this.id++
       store.dispatch('setForm', this.form)
     }
   }

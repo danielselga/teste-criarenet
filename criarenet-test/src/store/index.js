@@ -17,7 +17,7 @@ export default new Vuex.Store({
       { text: "Email", value: "email", align: "center" },
     ],
     data: {},
-    form: {}
+    form: {},
   },
   getters: {
     headers: (state) => state.headers,
@@ -25,7 +25,7 @@ export default new Vuex.Store({
   },
   mutations: {
     setForm: (state, payload) => {
-      state.data = payload
+      state.data = payload;
     },
     setData: (state, payload) => {
       state.data = payload;
@@ -34,10 +34,14 @@ export default new Vuex.Store({
   actions: {
     setForm: async (context, payload) => {
       try {
-        console.log(payload)
-        context.commit('setForm', payload)
+        context.commit('setForm' , payload)
+        await fetch("http://localhost:3000/data", {
+          method: 'POST',
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
     },
     setData: async (context) => {

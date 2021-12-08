@@ -1,5 +1,5 @@
- {
-   "data": [
+{
+  "data": [
     {
       "cpf": "04080757247",
       "name": "José Andrade",
@@ -17,6 +17,13 @@
       "name": "Augusto Maier",
       "email": "augusto@test.com.br",
       "phone": "11987654321"
+    },
+    {
+      "id": 1,
+      "nome": "",
+      "email": "",
+      "cpf": "",
+      "phone": ""
     }
   ]
- }
+}
