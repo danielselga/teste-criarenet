@@ -1,17 +1,34 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import DataTable from '../components/DataTable.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "@/views/Home.vue";
+import CadastrarContas from "../components/CadastrarContas.vue";
+import TabelaDeContas from '../components/TabelaDeContas.vue'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: DataTable },
-]
+  {
+    path: "/",
+    component: Home,
+    children: [
+      {
+        path: "/",
+        component: CadastrarContas,
+        name: "cadastro",
+      },
+      {
+        path: "tabela-de-contas",
+        component: TabelaDeContas,
+        name: "tabela",
+      },
+    ],
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
