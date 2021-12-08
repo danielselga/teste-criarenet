@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HelloWorld from '../components/HelloWorld.vue'
+import DataTable from '../components/DataTable.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: HelloWorld },
+  { path: '/', component: DataTable },
 ]
 
 const router = new VueRouter({
