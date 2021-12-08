@@ -20,7 +20,7 @@ npm run build
 Acesse [a configuração de referênca](https://cli.vuejs.org/config/).
 
 ## Json-server
-```
+
 Acesse a pasta raiz do projeto e execute o seguinte comando:
 ```
 json-server --watch db.json
