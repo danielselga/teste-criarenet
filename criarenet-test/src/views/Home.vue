@@ -57,8 +57,8 @@ export default {
     return {
       drawer: true,
       items: [
-        { title: "Cadastrar contas", icon: "mdi-file-document", route: 'cadastro' },
-        { title: "Contas cadastradas", icon: "mdi-account-group", route: 'tabela' },
+        { title: "Cadastrar usuários", icon: "mdi-file-document", route: 'cadastro' },
+        { title: "Usuários cadastradas", icon: "mdi-account-group", route: 'tabela' },
       ],
       mini: true,
     };

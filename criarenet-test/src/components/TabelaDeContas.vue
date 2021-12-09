@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container
-      ><h1 class="text-center my-5">Portal de contas</h1></v-container
+      ><h1 class="text-center my-5">Portal de usuários</h1></v-container
     >
     <v-row class="d-flex justify-center">
       <v-col cols="8">

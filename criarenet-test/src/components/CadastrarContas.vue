@@ -3,7 +3,7 @@
     <v-container>
       <v-row class="d-flex justify-center my-10 mb-16">
         <v-col sm="8" xl="4">
-          <v-container class="text-center my-5"><h1>Cadastrar conta</h1></v-container>
+          <v-container class="text-center my-5"><h1>Cadastrar usuários</h1></v-container>
           <v-card class="mb-16">
             <v-container class="blue-grey lighten-5 mb-16">
               <v-form ref="form" v-model="valid" lazy-validation>
