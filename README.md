@@ -17,8 +17,6 @@ npm run build
 
 ### Customizar configuração
 Acesse a configuração de referênca (https://cli.vuejs.org/config/).
-```
-```
 
 # Json-server
 
