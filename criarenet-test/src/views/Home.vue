@@ -45,7 +45,7 @@
       </v-content>
     <v-footer fixed class="primary">
       <v-col class="text-center" cols="12">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        {{ new Date().getFullYear() }} — <strong>Teste Crearenet - Daniel Ferreira Selga</strong>
       </v-col>
     </v-footer>
   </div>
