@@ -7,13 +7,15 @@
       "email": "jose@test.com.br",
       "phone": "11987654321"
     },
-    { "id": 2,
+    {
+      "id": 2,
       "cpf": "77797584192",
       "nome": "Manoel Silva",
       "email": "manoel@test.com.br",
       "phone": "11987654321"
     },
-    { "id": 3,
+    {
+      "id": 3,
       "cpf": "45486737688",
       "nome": "Augusto Maier",
       "email": "augusto@test.com.br",

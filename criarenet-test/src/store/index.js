@@ -22,7 +22,6 @@ export default new Vuex.Store({
   },
   getters: {
     headers: (state) => state.headers,
-    data: (state) => state.data,
   },
   mutations: {
     setForm: (state, payload) => {
@@ -48,28 +47,6 @@ export default new Vuex.Store({
         console.log(err);
       }
     },
-    setData: async (context) => {
-      try {
-        const data = await fetch("http://localhost:3000/data");
-        const res = await data.json();
-        context.commit("setData", res);
-        localStorage.setItem('data', JSON.stringify(res))
-      } catch (err) {
-        console.log(err);
-      }
-    },
-    deleteData: async (context, payload) => {
-      try {
-        context.commit("deleteData", payload);
-        await fetch(`http://localhost:3000/data/${payload.id}`, {
-          method: 'DELETE',
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-      } catch (err) {
-        console.log(err)
-      }
-    }
   },
   modules: {},
 });

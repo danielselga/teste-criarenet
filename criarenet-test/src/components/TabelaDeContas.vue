@@ -5,10 +5,10 @@
     >
     <v-row class="d-flex justify-center">
       <v-col cols="8">
-        <v-card>
+        <v-card v-if="getLocalStorageData.length">
           <v-data-table
             :headers="getHeaders"
-            :items="getLocalStorageData || getData"
+            :items="data || getLocalStorageData"
           >
             <template v-slot:item.delete="props">
               <v-btn icon center color="error" @click="getItemData(props.item)">
@@ -17,6 +17,7 @@
             </template>
           </v-data-table>
         </v-card>
+        <div v-else>carregando</div>
       </v-col>
     </v-row>
   </div>
@@ -27,12 +28,26 @@ import store from "../store/index";
 
 export default {
   data() {
-    return {};
+    return {
+      data: "",
+    };
   },
   methods: {
-    getItemData(item) {
-      console.log(item)
-      store.dispatch('deleteData', item)
+    async getItemData(item) {
+      console.log(item);
+      try {
+        await fetch(`http://localhost:3000/data/${item.id}`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(item),
+        });
+
+        const data = await fetch("http://localhost:3000/data");
+        const res = await data.json();
+        this.data = await res;
+      } catch (err) {
+        console.log(err);
+      }
     },
   },
   computed: {
@@ -46,9 +61,14 @@ export default {
       return JSON.parse(localStorage.getItem("data"));
     },
   },
-  created: () => {
-    console.log(JSON.parse(localStorage.getItem("data")));
-    store.dispatch("setData");
+  created: async function () {
+    try {
+      const data = await fetch("http://localhost:3000/data");
+      const res = await data.json();
+      this.data = await res;
+    } catch (err) {
+      console.log(err);
+    }
   },
 };
 </script>
