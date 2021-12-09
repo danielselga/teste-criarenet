@@ -65,7 +65,6 @@ export default {
   },
   methods: {
     goTo(item) {
-      console.log(item.route)
       this.$router.push({name: item.route})
     }
   }

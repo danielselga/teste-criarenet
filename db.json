@@ -20,6 +20,13 @@
       "nome": "Augusto Maier",
       "email": "augusto@test.com.br",
       "phone": "11987654321"
+    },
+    {
+      "id": 4,
+      "nome": "Daniel Ferreira Selga",
+      "email": "danielselga@gmail.com",
+      "cpf": "123.456.789-11",
+      "phone": "(27) 99981-7892"
     }
   ]
 }

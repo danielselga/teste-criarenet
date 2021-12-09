@@ -82,9 +82,6 @@ export default {
       this.form.phone = ''
     }
   },
-  created: () => {
-    store.dispatch("setData");
-  }
 };
 </script>
 
