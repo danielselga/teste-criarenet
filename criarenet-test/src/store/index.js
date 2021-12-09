@@ -15,6 +15,7 @@ export default new Vuex.Store({
       { text: "CPF", value: "cpf", align: "center" },
       { text: "Telefone", value: "phone", align: "center" },
       { text: "Email", value: "email", align: "center" },
+      { text: "Deletar usuário", value: "delete", align: "center" },
     ],
     data: {},
     form: {},
@@ -30,6 +31,9 @@ export default new Vuex.Store({
     setData: (state, payload) => {
       state.data = payload;
     },
+    deleteData: (state, payload) => {
+      state.data = payload
+    }
   },
   actions: {
     setForm: async (context, payload) => {
@@ -54,6 +58,18 @@ export default new Vuex.Store({
         console.log(err);
       }
     },
+    deleteData: async (context, payload) => {
+      try {
+        context.commit("deleteData", payload);
+        await fetch(`http://localhost:3000/data/${payload.id}`, {
+          method: 'DELETE',
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+      } catch (err) {
+        console.log(err)
+      }
+    }
   },
   modules: {},
 });
