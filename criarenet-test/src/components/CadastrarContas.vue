@@ -44,7 +44,7 @@
                 ></v-text-field>
 
                 <v-container class="d-flex justify-center">
-                  <v-btn color="success" class="mr-4" @click="getUser">
+                  <v-btn color="success" class="mr-4" @click.prevent="getUser">
                     Cadastrar usuário
                   </v-btn>
                 </v-container>
@@ -74,9 +74,16 @@ export default {
   },
   methods: {
     getUser() {
-      this.id = this.id++
+      this.form.id = this.form.id++ 
       store.dispatch('setForm', this.form)
+      this.form.nome = ''
+      this.form.email = ''
+      this.form.cpf = ''
+      this.form.phone = ''
     }
+  },
+  created: () => {
+    store.dispatch("setData");
   }
 };
 </script>

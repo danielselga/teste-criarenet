@@ -10,7 +10,7 @@ export default new Vuex.Store({
         text: "Nome completo",
         align: "start",
         filterable: false,
-        value: "name",
+        value: "nome",
       },
       { text: "CPF", value: "cpf", align: "center" },
       { text: "Telefone", value: "phone", align: "center" },
@@ -34,12 +34,12 @@ export default new Vuex.Store({
   actions: {
     setForm: async (context, payload) => {
       try {
-        context.commit('setForm' , payload)
         await fetch("http://localhost:3000/data", {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
+        context.commit('setForm', payload)
       } catch (err) {
         console.log(err);
       }
@@ -48,10 +48,10 @@ export default new Vuex.Store({
       try {
         const data = await fetch("http://localhost:3000/data");
         const res = await data.json();
-        console.log(res);
         context.commit("setData", res);
+        localStorage.setItem('data', JSON.stringify(res))
       } catch (err) {
-        console.err(err);
+        console.log(err);
       }
     },
   },
